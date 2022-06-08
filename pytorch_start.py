@@ -1,3 +1,4 @@
 import torch
-x = torch.rand(5, 3)
-print(x)
+
+# 토치 버전 확인
+print(torch.__version__)
