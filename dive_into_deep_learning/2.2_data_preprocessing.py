@@ -22,7 +22,7 @@ data = pd.read_csv(data_file)
 
 # {2.2.2 Handling Missing Data}
 # intenger-location based indexing(iloc)
-# fillna와 mean을 이용하여 NaN에 평균(mean)값으로 대체
+# fillna으로 결측값 처리 mean을 이용하여 NaN에 평균(mean)값으로 대체
 inputs, outputs = data.iloc[:, 0:2], data.iloc[:, 2]
 inputs.iloc[:, 0] = inputs.fillna(inputs.iloc[:, 0].mean())
 inputs = pd.get_dummies(inputs, dummy_na=True)
@@ -32,5 +32,3 @@ print(outputs)
 
 # 2.2.3. Conversion to thr Tensor Format
 X, y = torch.tensor(inputs.values), torch.tensor(outputs.values)
-print(X)
-print(y)
